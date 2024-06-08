@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello Laravel</h1>
+    <button><a href="login">Login</a></button>
+    <button><a href="register">Resister</a></button>
 </body>
 </html>
