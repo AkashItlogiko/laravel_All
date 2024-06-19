@@ -8,5 +8,11 @@
 <body>
     <button><a href="login">Login</a></button>
     <button><a href="register">Resister</a></button>
+
+<h1>This is My Home Page</h1>
+    <ul class="list">
+     <li class="list-item"> <a href="{{ url('about') }}">About</a> </li>   
+     <li class="list-item"> <a href="{{ url('contact')}}">Contact</a> </li>
+    </ul>
 </body>
 </html>
