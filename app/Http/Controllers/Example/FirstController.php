@@ -14,12 +14,18 @@ class FirstController extends Controller
     }
     public function about_index()
     {
-        return view('about');
+        return response('Hello World!');
     } 
 
     //Countery Method
     public function countery()
     {
-        return view('countery');
-    } 
+        return response('Hello World!');
+    }
+    
+    //__Student store__//
+    public function Studentstore(Request $request){
+        dd($request->collect());
+    }
+     
 }

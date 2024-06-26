@@ -38,6 +38,9 @@ Route::get('/contact-us', [FirstController::class, 'index'])->name('contact.us')
 
 Route::get('/about-us', [FirstController::class, 'about_index'])->name('about.us');
  
+Route::post('/student/edit', [FirstController::class, 'Studentstore'])->name('student.store');
+
+
 //__Invokable Route__//
 
 
