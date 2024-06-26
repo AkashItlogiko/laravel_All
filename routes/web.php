@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Example\FirstController;
+use App\Http\Controllers\LearnController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,23 +22,35 @@ Route::get('/', function() {
     return view('welcome');
 });
 
-Route::get('/about', function(){
+// Route::get('/about', function () {
 
-     return view('about');
+//     return view('about');
 
-});
+// })->name('about.us');
 
+
+// Route::get('/contact', function () {
+//     return view('contact');
+// })->name('contact.us');
+
+
+Route::get('/contact-us', [FirstController::class, 'index'])->name('contact.us');
+
+Route::get('/about-us', [FirstController::class, 'about_index'])->name('about.us');
  
-Route::get('/contact', function() {
+//__Invokable Route__//
 
- 
-    return view('contact');
-});
 
-Route::get('/itlogiko', function(){
-    return view('itlogiko');
+Route::get('/test', LearnController::class);
 
-})->middleware('itlogiko');
+Route::get('/countery', [FirstController::class,'countery'])->name('countery')->middleware('countery');
+
+Route::resource('photos', PhotoController::class);
+
+// Route::get('/itlogiko', function(){
+//     return view('itlogiko');
+
+// })->middleware('itlogiko');
 
 
 
