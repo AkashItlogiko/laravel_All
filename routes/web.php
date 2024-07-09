@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Example\FirstController;
+use App\Http\Controllers\Example\SecondController;
+use Illuminate\Http\Request;
 use App\Http\Controllers\LearnController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -36,15 +38,30 @@ Route::get('/', function() {
 
 Route::get('/contact-us', [FirstController::class, 'index'])->name('contact.us');
 
-Route::get('/about-us', [FirstController::class, 'about_index'])->name('about.us');
+// Route::get('/about-us', [SecondController::class, 'test']);
+
  
-Route::post('/student/edit', [FirstController::class, 'Studentstore'])->name('student.store');
+Route::post('/store/contact', [FirstController::class, 'store'])->name('store.contact');
 
+Route::get('/testone', [FirstController::class, 'about_index'])->name('about.us');
 
+Route::get('/laravel', [FirstController::class, 'laravel'])->name('laravel');
+
+Route::get('/test',function( Request $request){
+ 
+    $request->session()->put('age', '25');
+
+    // session(['name' => 'LearnHunter']);
+});
+
+Route::get('/all', function(Request $request){
+    return $request->session()->all();
+    // $request->session()->flush();
+});
 //__Invokable Route__//
 
 
-Route::get('/test', LearnController::class);
+// Route::get('/test', LearnController::class);
 
 Route::get('/countery', [FirstController::class,'countery'])->name('countery')->middleware('countery');
 
