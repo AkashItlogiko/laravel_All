@@ -40,18 +40,17 @@ Route::get('/contact-us', [FirstController::class, 'index'])->name('contact.us')
 
 // Route::get('/about-us', [SecondController::class, 'test']);
 
- 
+
 Route::post('/store/contact', [FirstController::class, 'store'])->name('store.contact');
 
 Route::get('/testone', [FirstController::class, 'about_index'])->name('about.us');
 
 Route::get('/laravel', [FirstController::class, 'laravel'])->name('laravel');
 
-Route::get('/test',function( Request $request){
+Route::get('/test',function (Request $request){
+    Log::info('this is your age'.rand(1,50));
+    return redirect()->to('/');
  
-    $request->session()->put('age', '25');
-
-    // session(['name' => 'LearnHunter']);
 });
 
 Route::get('/all', function(Request $request){

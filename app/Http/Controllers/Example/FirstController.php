@@ -14,6 +14,7 @@ class FirstController extends Controller
     //__index method__//  
     public function index()
     {
+     
         return view('contact');
     }
     public function about_index()
